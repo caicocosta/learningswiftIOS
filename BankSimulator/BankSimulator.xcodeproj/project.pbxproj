@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7D0D61492702114800D01556 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0D61482702114800D01556 /* main.swift */; };
-		7D0D615227022BFD00D01556 /* Conta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0D615127022BFD00D01556 /* Conta.swift */; };
+		7D0D615227022BFD00D01556 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0D615127022BFD00D01556 /* AccountModel.swift */; };
 		7D0D61552702302800D01556 /* Accounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0D61542702302800D01556 /* Accounts.swift */; };
 		7D0D615A27025D7400D01556 /* AccountsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0D615927025D7400D01556 /* AccountsController.swift */; };
 /* End PBXBuildFile section */
@@ -28,7 +28,7 @@
 /* Begin PBXFileReference section */
 		7D0D61452702114800D01556 /* BankSimulator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BankSimulator; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D0D61482702114800D01556 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		7D0D615127022BFD00D01556 /* Conta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conta.swift; sourceTree = "<group>"; };
+		7D0D615127022BFD00D01556 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
 		7D0D61542702302800D01556 /* Accounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accounts.swift; sourceTree = "<group>"; };
 		7D0D615927025D7400D01556 /* AccountsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,7 +74,7 @@
 		7D0D614F27022BB200D01556 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7D0D615127022BFD00D01556 /* Conta.swift */,
+				7D0D615127022BFD00D01556 /* AccountModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -161,7 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D0D61492702114800D01556 /* main.swift in Sources */,
-				7D0D615227022BFD00D01556 /* Conta.swift in Sources */,
+				7D0D615227022BFD00D01556 /* AccountModel.swift in Sources */,
 				7D0D61552702302800D01556 /* Accounts.swift in Sources */,
 				7D0D615A27025D7400D01556 /* AccountsController.swift in Sources */,
 			);

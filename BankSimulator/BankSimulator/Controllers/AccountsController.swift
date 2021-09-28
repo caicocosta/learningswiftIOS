@@ -8,18 +8,12 @@
 import Foundation
 
 class AccountsController {
-    func deposit() {
-        var numberAccount = 0
-        var value = 0.0
-        print("Digite o numero da conta que deseja depositar: ")
-        if let str = readLine() {
-            numberAccount = Int(str) ?? 0
-        }
-        print("Digite o valor do deposito: ")
-        if let str = readLine() {
-            value = Double(str) ?? 0.0
-        }
-            
+    
+    func createAccount(account: Account){
+        accounts.append(account)
+    }
+    
+    func deposit(numberAccount: Int, value: Double) {            
         if numberAccount != 0 && value >= 0.0 {
             if let index = accounts.firstIndex(where: {$0.number == numberAccount}) {
                 print("---REALIZANDO DEPOSITO NA CONTA DE: \(accounts[index].name)")
@@ -34,18 +28,7 @@ class AccountsController {
         readLine()
     }
 
-    func withDraw(){
-        var numberAccount = 0
-        var value = 0.0
-        print("Digite o numero da conta que deseja sacar: ")
-        if let str = readLine() {
-            numberAccount = Int(str) ?? 0
-        }
-        print("Digite o valor do saque: ")
-        if let str = readLine() {
-            value = Double(str) ?? 0.0
-        }
-            
+    func withDraw(numberAccount: Int, value: Double){
         if numberAccount != 0 && value >= 0.0 {
             if let index = accounts.firstIndex(where: {$0.number == numberAccount}) {
                 print("---REALIZANDO SAQUE NA CONTA DE: \(accounts[index].name)")
@@ -60,23 +43,7 @@ class AccountsController {
         readLine()
     }
     
-    func payWithPix(){
-        var numberOriginAccount = 0
-        var numberDestineAccount = 0
-        var value = 0.0
-        print("Digite o numero da conta que de origem: ")
-        if let str = readLine() {
-            numberOriginAccount = Int(str) ?? 0
-        }
-        print("Digite o numero da conta que de destino: ")
-        if let str = readLine() {
-            numberDestineAccount = Int(str) ?? 0
-        }
-        print("Digite o valor do pagamento: ")
-        if let str = readLine() {
-            value = Double(str) ?? 0.0
-        }
-            
+    func payWithPix(numberOriginAccount: Int, numberDestineAccount: Int, value: Double){
         if numberOriginAccount != 0, numberDestineAccount != 0, value >= 0.0 {
             if let indexOriginAccount = accounts.firstIndex(where: {$0.number == numberOriginAccount}) {
                 if let indexDestineAccount = accounts.firstIndex(where: {$0.number == numberDestineAccount}) {
@@ -95,14 +62,8 @@ class AccountsController {
         readLine()
     }
     
-    func deleteAccount(){
-        var numberAccount = 0
+    func deleteAccount(numberAccount: Int){
         var op = ""
-        print("Digite o numero da conta que deseja excluir: ")
-        if let str = readLine() {
-            numberAccount = Int(str) ?? 0
-        }
-        
         if numberAccount != 0 {
             if let index = accounts.firstIndex(where: {$0.number == numberAccount}) {
                 print("Tem certeza que deseja excluir a conta de: Nome: \(accounts[index].name), Numero: \(accounts[index].number)\n [S] || [N]")
