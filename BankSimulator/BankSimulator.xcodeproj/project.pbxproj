@@ -9,8 +9,12 @@
 /* Begin PBXBuildFile section */
 		7D0D61492702114800D01556 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0D61482702114800D01556 /* main.swift */; };
 		7D0D615227022BFD00D01556 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0D615127022BFD00D01556 /* AccountModel.swift */; };
-		7D0D61552702302800D01556 /* Accounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0D61542702302800D01556 /* Accounts.swift */; };
+		7D0D61552702302800D01556 /* AccountsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0D61542702302800D01556 /* AccountsView.swift */; };
 		7D0D615A27025D7400D01556 /* AccountsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0D615927025D7400D01556 /* AccountsController.swift */; };
+		7D5728542705ED3D003B2227 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5728532705ED3D003B2227 /* UserView.swift */; };
+		7D572856270601ED003B2227 /* UsersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D572855270601ED003B2227 /* UsersController.swift */; };
+		7D572858270631FB003B2227 /* PixModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D572857270631FB003B2227 /* PixModel.swift */; };
+		7DF3CA732704F12200A557F8 /* UsersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF3CA722704F12200A557F8 /* UsersModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,8 +33,12 @@
 		7D0D61452702114800D01556 /* BankSimulator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BankSimulator; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D0D61482702114800D01556 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		7D0D615127022BFD00D01556 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
-		7D0D61542702302800D01556 /* Accounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accounts.swift; sourceTree = "<group>"; };
+		7D0D61542702302800D01556 /* AccountsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsView.swift; sourceTree = "<group>"; };
 		7D0D615927025D7400D01556 /* AccountsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsController.swift; sourceTree = "<group>"; };
+		7D5728532705ED3D003B2227 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		7D572855270601ED003B2227 /* UsersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersController.swift; sourceTree = "<group>"; };
+		7D572857270631FB003B2227 /* PixModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixModel.swift; sourceTree = "<group>"; };
+		7DF3CA722704F12200A557F8 /* UsersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +83,8 @@
 			isa = PBXGroup;
 			children = (
 				7D0D615127022BFD00D01556 /* AccountModel.swift */,
+				7DF3CA722704F12200A557F8 /* UsersModel.swift */,
+				7D572857270631FB003B2227 /* PixModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -82,6 +92,7 @@
 		7D0D61532702301000D01556 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7D5728522705ED24003B2227 /* Users */,
 				7D0D61572702310600D01556 /* Accounts */,
 			);
 			path = Views;
@@ -90,7 +101,7 @@
 		7D0D61572702310600D01556 /* Accounts */ = {
 			isa = PBXGroup;
 			children = (
-				7D0D61542702302800D01556 /* Accounts.swift */,
+				7D0D61542702302800D01556 /* AccountsView.swift */,
 			);
 			path = Accounts;
 			sourceTree = "<group>";
@@ -99,8 +110,17 @@
 			isa = PBXGroup;
 			children = (
 				7D0D615927025D7400D01556 /* AccountsController.swift */,
+				7D572855270601ED003B2227 /* UsersController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7D5728522705ED24003B2227 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				7D5728532705ED3D003B2227 /* UserView.swift */,
+			);
+			path = Users;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,8 +181,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D0D61492702114800D01556 /* main.swift in Sources */,
+				7D5728542705ED3D003B2227 /* UserView.swift in Sources */,
+				7D572856270601ED003B2227 /* UsersController.swift in Sources */,
+				7D572858270631FB003B2227 /* PixModel.swift in Sources */,
 				7D0D615227022BFD00D01556 /* AccountModel.swift in Sources */,
-				7D0D61552702302800D01556 /* Accounts.swift in Sources */,
+				7DF3CA732704F12200A557F8 /* UsersModel.swift in Sources */,
+				7D0D61552702302800D01556 /* AccountsView.swift in Sources */,
 				7D0D615A27025D7400D01556 /* AccountsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

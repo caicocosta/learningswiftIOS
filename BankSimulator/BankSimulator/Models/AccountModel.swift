@@ -8,17 +8,14 @@
 import Foundation
 
 class Account{
-    var name: String
-    var btDate: String
-    var document: String
+    var userId: Int
     var number: Int
     var securityCod: Int
-    private var balance = 0.0
+    var keys: [PixKeys] = []
+    private var balance = 1000.0
     
-    init(name: String, btDate: String, document: String) {
-        self.name = name
-        self.btDate = btDate
-        self.document = document
+    init(userId: Int) {
+        self.userId = userId
         self.number = Int(arc4random_uniform(UInt32(1000)))
         self.securityCod = Int(arc4random_uniform(UInt32(100)))
     }
@@ -28,7 +25,7 @@ class Account{
     }
     
     func withDraw(value: Double){
-        if balance >= value {
+        if checkBalance(value: value) {
             balance -= value
         } else {
             print("Saldo insuficiente")
@@ -36,15 +33,45 @@ class Account{
     }
     
     func financialReport(){
-        print("Conta: \(number), Nome: \(name), DtNasc: \(btDate), Saldo: \(balance)")
+        print("Conta: \(number), Saldo: \(balance)")
     }
     
-    func payWithPix(originAccount: Int, destineAccount: Int, value: Double) {
+    func transfer(originAccount: Int, destineAccount: Int, value: Double) {
         if accounts[originAccount].balance >= value {
             accounts[originAccount].balance -= value
             accounts[destineAccount].balance += value
         } else {
             print("Saldo insuficiente")
         }
+    }
+    
+    func registeredKeys(){
+        if keys.count > 0 {
+            print("###  CHAVES CADASTRADAS  ### \n")
+            for keys in keys {
+                print("Tipo: \(keys.type.rawValue)    Chave: \(keys.key)")
+            }
+        } else {
+            print("Voce ainda nao possui chaves cadastradas!! ")
+        }
+        readLine()
+    }
+    
+    func checkBalance(value: Double) -> Bool{
+        if balance >= value {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func payWithPix(indexOrigin: Int, indexDestine: Int, value: Double) {
+        if accounts[indexOrigin].balance >= value {
+            accounts[indexOrigin].balance -= value
+            accounts[indexDestine].balance += value
+        } else {
+            print("Saldo insuficiente")
+        }
+        readLine()
     }
 }
