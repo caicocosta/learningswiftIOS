@@ -8,7 +8,7 @@
 import Foundation
 
 enum typeKeys: String {
-    case UNKNOWN = "DESCONHECIDO", EMAIL = "EMAIL", CELPHONE = "CELULAR", DOCUMENT = "CPF/CNPJ"
+    case UNKNOWN = "DESCONHECIDO", EMAIL = "E-MAIL", CELPHONE = "TELEFONE", DOCUMENT = "CPF/CNPJ"
 }
 
 class PixKeys {

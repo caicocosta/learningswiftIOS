@@ -16,7 +16,7 @@
 		7D572858270631FB003B2227 /* PixModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D572857270631FB003B2227 /* PixModel.swift */; };
 		7D8DB4FF270E0C75004BDB75 /* DatabaseErros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8DB4FE270E0C75004BDB75 /* DatabaseErros.swift */; };
 		7D8DB502270E127B004BDB75 /* StringValidators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8DB501270E127B004BDB75 /* StringValidators.swift */; };
-		7D8DB504270E1E75004BDB75 /* Retype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8DB503270E1E75004BDB75 /* Retype.swift */; };
+		7D8DB508270F5907004BDB75 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8DB507270F5907004BDB75 /* Menu.swift */; };
 		7DD476B7270CC76B0006FFA2 /* UserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD476B6270CC76B0006FFA2 /* UserDatabase.swift */; };
 		7DD476B9270CC8FF0006FFA2 /* AccountDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD476B8270CC8FF0006FFA2 /* AccountDatabase.swift */; };
 		7DF3CA732704F12200A557F8 /* UsersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF3CA722704F12200A557F8 /* UsersModel.swift */; };
@@ -45,7 +45,7 @@
 		7D572857270631FB003B2227 /* PixModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixModel.swift; sourceTree = "<group>"; };
 		7D8DB4FE270E0C75004BDB75 /* DatabaseErros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseErros.swift; sourceTree = "<group>"; };
 		7D8DB501270E127B004BDB75 /* StringValidators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringValidators.swift; sourceTree = "<group>"; };
-		7D8DB503270E1E75004BDB75 /* Retype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Retype.swift; sourceTree = "<group>"; };
+		7D8DB507270F5907004BDB75 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		7DD476B6270CC76B0006FFA2 /* UserDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDatabase.swift; sourceTree = "<group>"; };
 		7DD476B8270CC8FF0006FFA2 /* AccountDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDatabase.swift; sourceTree = "<group>"; };
 		7DF3CA722704F12200A557F8 /* UsersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersModel.swift; sourceTree = "<group>"; };
@@ -104,9 +104,9 @@
 		7D0D61532702301000D01556 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7D8DB507270F5907004BDB75 /* Menu.swift */,
 				7D5728522705ED24003B2227 /* Users */,
 				7D0D61572702310600D01556 /* Accounts */,
-				7D8DB503270E1E75004BDB75 /* Retype.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -140,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				7D8DB501270E127B004BDB75 /* StringValidators.swift */,
+				7D8DB4FE270E0C75004BDB75 /* DatabaseErros.swift */,
 			);
 			path = validators;
 			sourceTree = "<group>";
@@ -149,7 +150,6 @@
 			children = (
 				7DD476B6270CC76B0006FFA2 /* UserDatabase.swift */,
 				7DD476B8270CC8FF0006FFA2 /* AccountDatabase.swift */,
-				7D8DB4FE270E0C75004BDB75 /* DatabaseErros.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -220,8 +220,8 @@
 				7D572856270601ED003B2227 /* UsersController.swift in Sources */,
 				7D572858270631FB003B2227 /* PixModel.swift in Sources */,
 				7D0D615227022BFD00D01556 /* AccountModel.swift in Sources */,
+				7D8DB508270F5907004BDB75 /* Menu.swift in Sources */,
 				7DF3CA732704F12200A557F8 /* UsersModel.swift in Sources */,
-				7D8DB504270E1E75004BDB75 /* Retype.swift in Sources */,
 				7D0D61552702302800D01556 /* AccountsView.swift in Sources */,
 				7D0D615A27025D7400D01556 /* AccountsController.swift in Sources */,
 			);

@@ -10,30 +10,6 @@ import Foundation
 class AccountView {
     
     private var accountController = AccountsController()
-
-    func createAccount(){
-
-        var name = ""
-        var btDate = ""
-        var document = ""
-        
-        print("######Seja bem-vindo ao Bank Simulator, o que deseja fazer? ")
-        print("Digite o seu nome: ")
-        if let str = readLine() {
-            name = str
-        }
-        print("Digite sua data de nascimento: ")
-        if let str = readLine() {
-            btDate = str
-        }
-        print("Digite o seu cpf: ")
-        if let str = readLine() {
-            document = str
-        }
-        
-        //let account = Account(name: name, btDate: btDate, document: document)
-        //accountController.createAccount(account: account)
-    }
     
     func deposit(){
         var numberAccount = 0
@@ -74,43 +50,70 @@ class AccountView {
         accountController.transfer(userId: userLoggedIn, numberDestineAccount: numberDestineAccount, value: value)
     }
     
-    func deleteAccount(){
+    func deleteAccount(login: String, userLoggedIn: Int){
         var numberAccount = 0
         print("Confirme o numero da sua conta: ")
         if let str = readLine() {
             numberAccount = Int(str) ?? 0
         }
         
-        accountController.deleteAccount(numberAccount: numberAccount)
+        accountController.deleteAccount(login: login, userLoggedIn: userLoggedIn, numberAccount: numberAccount)
     }
     
     func addPixKey(userLoggedIn: Int) {
         var op = 0
         var typeKey: typeKeys = .UNKNOWN
         var key = ""
+        var repeate = true
         
-        print("Selecione o tipo de chave que deseja adicionar: ")
-        print("1: Email: ")
-        print("2: Telefone: ")
-        print("3: CPF/CNPJ")
-        print("0: Cancelar")
-        if let str = readLine() {
-            op = Int(str) ?? 0
+        while repeate {
+            print("Selecione o tipo de chave que deseja adicionar: ")
+            print("1: Email: ")
+            print("2: Telefone: ")
+            print("3: CPF/CNPJ")
+            print("0: Cancelar")
+            if let str = readLine() {
+                op = Int(str) ?? 0
+            }
+            switch op {
+                case 1:
+                    typeKey = .EMAIL
+                    repeate = false
+                case 2:
+                    typeKey = .CELPHONE
+                    repeate = false
+                case 3:
+                    typeKey = .DOCUMENT
+                    repeate = false
+                default:
+                    print("Selecione uma das opcoes informadas")
+            }
         }
-        switch op {
-            case 1:
-                typeKey = .EMAIL
-            case 2:
-                typeKey = .CELPHONE
-            case 3:
-                typeKey = .DOCUMENT
-            default:
-                menu()
-        }
-        
-        print("Digite a chave que deseja cadastrar")
-        if let str = readLine() {
-            key = str
+
+        repeate = true
+        while repeate {
+            print("Digite um \(typeKey.rawValue) que deseja cadastrar")
+            if let str = readLine() {
+                key = str
+            }
+            
+            switch typeKey {
+                case .EMAIL:
+                    if !key.isValidEmail(key){
+                        print("----- Por favor informe um e-mail válido. -----\n")
+                    } else {
+                        repeate = false
+                    }
+                case .CELPHONE:
+                    if !key.isValidPhoneNumber(key){
+                        print("----- Por favor informe um telefone válido. Ex. 00000-0000-----")
+                    } else {
+                        repeate = false
+                    }
+                default:
+                    repeate = false
+            }
+            
         }
         
         accountController.addPixeKey(userLoggedIn: userLoggedIn, typeKey: typeKey, key: key)
@@ -121,24 +124,30 @@ class AccountView {
         var typeKey: typeKeys = .UNKNOWN
         var key = ""
         var value = 0.0
+        var repeate = true
         
-        print("###  Selecione o tipo de chave que deseja pagar: ###")
-        print("1: Email: ")
-        print("2: Telefone: ")
-        print("3: CPF/CNPJ")
-        print("0: Cancelar")
-        if let str = readLine() {
-            op = Int(str) ?? 0
-        }
-        switch op {
-            case 1:
-                typeKey = .EMAIL
-            case 2:
-                typeKey = .CELPHONE
-            case 3:
-                typeKey = .DOCUMENT
-            default:
-                menu()
+        while repeate {
+            print("###  Selecione o tipo de chave que deseja pagar: ###")
+            print("1: Email: ")
+            print("2: Telefone: ")
+            print("3: CPF/CNPJ")
+            print("0: Cancelar")
+            if let str = readLine() {
+                op = Int(str) ?? 0
+            }
+            switch op {
+                case 1:
+                    typeKey = .EMAIL
+                    repeate = false
+                case 2:
+                    typeKey = .CELPHONE
+                    repeate = false
+                case 3:
+                    typeKey = .DOCUMENT
+                    repeate = false
+                default:
+                    print("Selecione uma das opcoes informadas")
+            }
         }
         
         print("Digite a chave que deseja cadastrar")
@@ -155,7 +164,14 @@ class AccountView {
     }
     
     func keysRegistered(userLoggedIn: Int) {
-        print("### Chaves Cadastradas ###")
+        print("\n\n### Chaves Cadastradas ###\n\n")
         accountController.keysRegistered(userLoggedIn: userLoggedIn)
+    }
+    
+    func balance(userLoggedIn: Int){
+        guard let balance = accountController.balance(userLoggedIn: userLoggedIn) else {return}
+        print("\n\n**** Saldo da conta \(balance.userName) ****\n\n")
+        print("Conta: \(balance.account),   Saldo: \(balance.balance)\n\n")
+        readLine()
     }
 }

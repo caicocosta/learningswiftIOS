@@ -24,25 +24,17 @@ class Account{
         balance += value
     }
     
-    func withDraw(value: Double){
+    func withDraw(value: Double) -> Bool {
         if checkBalance(value: value) {
             balance -= value
+            return true
         } else {
-            print("Saldo insuficiente")
+            return false
         }
     }
     
     func financialReport(){
         print("Conta: \(number), Saldo: \(balance)")
-    }
-    
-    func transfer(originAccount: Int, destineAccount: Int, value: Double) {
-        if accounts[originAccount].balance >= value {
-            accounts[originAccount].balance -= value
-            accounts[destineAccount].balance += value
-        } else {
-            print("Saldo insuficiente")
-        }
     }
     
     func registeredKeys(){
@@ -65,13 +57,8 @@ class Account{
         }
     }
     
-    func payWithPix(indexOrigin: Int, indexDestine: Int, value: Double) {
-        if accounts[indexOrigin].balance >= value {
-            accounts[indexOrigin].balance -= value
-            accounts[indexDestine].balance += value
-        } else {
-            print("Saldo insuficiente")
-        }
-        readLine()
+    
+    func getBalance() -> Double {
+        return balance
     }
 }

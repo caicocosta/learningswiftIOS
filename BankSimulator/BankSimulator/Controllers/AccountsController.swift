@@ -8,91 +8,70 @@
 import Foundation
 
 class AccountsController {
-    
-    func createAccount(account: Account){
-        accounts.append(account)
-    }
-    
-    func deposit(numberAccount: Int, value: Double) {            
+
+    func deposit(numberAccount: Int, value: Double) {
         if numberAccount != 0 && value >= 0.0 {
-            if let index = accounts.firstIndex(where: {$0.number == numberAccount}) {
-                print("---REALIZANDO DEPOSITO NA CONTA DE: \(accounts[index].userId)")
-                accounts[index].deposit(value: value)
+            if AccountDatabase.shared.deposit(numberAccount: numberAccount, value: value) {
+                print("**** REALIZANDO DEPOSITO EM CONTA ****")
             } else {
-                print("Conta nao cadastrada")
+                print("----- CONTA NÃO ENCONTRADA -----")
             }
         } else {
             print("Deposito cancelado")
         }
-        
         readLine()
     }
 
     func withDraw(userLoggedIn: Int, value: Double){
         if userLoggedIn != 0 && value >= 0.0 {
-            if let index = accounts.firstIndex(where: {$0.userId == userLoggedIn}) {
-                print("---REALIZANDO SAQUE NA CONTA DE: \(accounts[index].userId)")
-                accounts[index].withDraw(value: value)
+            let result = AccountDatabase.shared.withDraw(userLoggedIn: userLoggedIn, value: value)
+            if result.status {
+                print("**** REALIZANDO SAQUE EM CONTA ****")
             } else {
-                print("Conta nao cadastrada")
+                print("----- \(result.message.uppercased()) -----")
             }
         } else {
             print("Saque cancelado")
         }
-        
         readLine()
     }
     
     func transfer(userId: Int, numberDestineAccount: Int, value: Double){
-        var userName = ""
-        var userNameDestine = ""
-        
-        if let index = users.firstIndex(where: {$0.identifier == userId}) {
-            userName = users[index].name
-        }
-    
-        if userId != 0, numberDestineAccount != 0, value >= 0.0 {
-            if let indexOriginAccount = accounts.firstIndex(where: {$0.userId == userId}) {
-                if let indexDestineAccount = accounts.firstIndex(where: {$0.number == numberDestineAccount}) {
-                    if let index = users.firstIndex(where: {$0.identifier == accounts[indexDestineAccount].userId}) {
-                        userNameDestine = users[index].name
-                    }
-                    print("---TRANSFERINDO SALDO DA CONTA DE: \(userName), PARA A CONTA DE: \(userNameDestine)")
-                    accounts[indexOriginAccount].transfer(originAccount: indexOriginAccount, destineAccount: indexDestineAccount, value: value)
-                } else {
-                    print("Conta de destindo nao cadastrada")
-                }
-            } else {
-                print("Conta de origem nao cadastrada")
+        if userId != 0 || numberDestineAccount != 0, value >= 0.0 {
+            print("\n\n **** TRANSFERINDO SALDO PARA CONTA: \(numberDestineAccount) **** \n\n")
+            let result = AccountDatabase.shared.transfer(userId: userId, numberAccountDestine: numberDestineAccount, value: value)
+            if !result.status {
+                print("----- \(result.message.uppercased()) -----")
             }
         } else {
             print("Saque cancelado")
         }
-        
         readLine()
     }
     
-    func deleteAccount(numberAccount: Int){
+    func deleteAccount(login: String, userLoggedIn: Int, numberAccount: Int){
         var op = ""
         if numberAccount != 0 {
-            if let index = accounts.firstIndex(where: {$0.number == numberAccount}) {
-                print("Tem certeza que deseja excluir a conta de: Nome: \(accounts[index].userId), Numero: \(accounts[index].number)\n [S] || [N]")
-                if let answer = readLine() {
-                    op = answer.uppercased()
-                    if op == "S" {
-                        print("Excluindo conta!!")
-                        accounts.remove(at: index)
-                    } else {
-                        print("Exclusao cancelada")
-                    }
-                }
-            } else {
-                print("Conta nao cadastrada")
+            guard let index = AccountDatabase.shared.isPresentNumberAccountAndUserId(numberAccount: numberAccount, userId: userLoggedIn) else {
+                print("Conta não cadastrada")
+                readLine()
+                return
+            }
+            print("\nTem certeza que deseja excluir a conta do CPF: \(login), Numero: \(numberAccount)\n [S] || [N]")
+            if let answer = readLine() {
+               op = answer.uppercased()
+               if op == "S" {
+                  print("\n\n**** Excluindo conta!!\n\n")
+                  AccountDatabase.shared.deleteAccount(index: index)
+                  menu.firstMenu()
+               } else {
+                   print("Exclusao cancelada")
+               }
             }
         } else {
             print("Exclusao cancelada")
         }
-        
+        readLine()
     }
     
     func addPixeKey(userLoggedIn: Int, typeKey: typeKeys, key: String) {
@@ -101,7 +80,7 @@ class AccountsController {
         guard let index = AccountDatabase.shared.isPresentIndex(userdId: userLoggedIn) else {return}
         let result = AccountDatabase.shared.addPixKeys(index: index, pixKey: pixKey)
         if !result.status {
-            print("Houve um erro ao cadastrar a chave: \(result.msg)")
+            print("Houve um erro ao cadastrar a chave: \(result.message)")
         } else {
             print("Chave cadastrada com sucesso")
         }
@@ -109,27 +88,33 @@ class AccountsController {
     }
     
     func payWithPix(userLoggedIn: Int, typeKey: typeKeys, key: String, value: Double){
-        var userNameDestine = ""
         if key != "" && value > 0 {
-            if let indexOrigin = accounts.firstIndex(where: {$0.userId == userLoggedIn}) {
-                if let indexDestine = accounts.firstIndex(where: {$0.keys.contains(where: {$0.type == typeKey && $0.key == key})}) {
-                    if let index = users.firstIndex(where: {$0.identifier == accounts[indexDestine].userId}) {
-                        userNameDestine = users[index].name
-                    }
-                    print("---REALIZANDO PAGAMENTO PARA A CONTA DE : \(userNameDestine), NO VALOR DE: \(value)")
-                    accounts[indexOrigin].payWithPix(indexOrigin: indexOrigin, indexDestine: indexDestine, value: value)
-                }
+            print("\n\n**** REALIZANDO PAGAMENTO PARA A CONTA, NO VALOR DE: \(value) ****\n\n")
+            let result = AccountDatabase.shared.payWithPix(userId: userLoggedIn, typekey: typeKey, key: key, value: value)
+            if !result.status {
+                print("----- \(result.message.uppercased()) -----")
             }
+        } else {
+            print("Pagamento cancelado")
         }
-        
+        readLine()
     }
     
     func keysRegistered(userLoggedIn: Int) {
-        guard let keys = AccountDatabase.shared.registeredKeys(userLoggedIn: userLoggedIn) else {return}
+        guard let keys = AccountDatabase.shared.registeredKeys(userLoggedIn: userLoggedIn) else {
+            print("---- Nenhuma chave cadastrada ----\n\n")
+            readLine()
+            return
+        }
         for key in keys {
             print("Tipo: \(key.type),   Chave: \(key.key)")
         }
         readLine()
+    }
+    
+    func balance(userLoggedIn: Int) -> (userName: String, account: Int, balance: Double)? {
+        guard let result = AccountDatabase.shared.balanceReport(userLoggedIn: userLoggedIn) else {return nil}
+        return (result.userName, result.account, result.balance)
     }
 
 }

@@ -9,12 +9,11 @@ import Foundation
 
 class Usercontroller {
     let stringValidators = StringValidators()
-    let retype = Retype()
     let minCh = 5
     
     func createUser(name: String, lastName: String, btDate: String, document: String, login: String, password: String) -> String{
         
-        let user = Users(identifier: accounts.count + 1, name: name, lastName: lastName, btDate: btDate, document: document, login: login, password: password)
+        let user = Users(identifier: UserDatabase.shared.lastIdentifier() + 1, name: name, lastName: lastName, btDate: btDate, document: document, login: login, password: password)
         
         let isValid = stringValidators.minCharacter(text: [name, lastName], minCh: minCh)
         if !isValid.status {
@@ -26,7 +25,6 @@ class Usercontroller {
         if !user.document.isCPF {
             print("----- O CPF informado e invalido -----")
             readLine()
-            //user.document = retype.retyping(str: "Digite o CPF novamente: ") ?? ""
             return ""
         }
 
@@ -37,22 +35,24 @@ class Usercontroller {
             AccountDatabase.shared.addAccount(account: account)
             return user.login
         } else {
-            print("Houve um erro ao tentar cadastrar o usuário: \(result.msg) \n\n\n")
+            print("Houve um erro ao tentar cadastrar o usuário: \(result.message) \n\n\n")
             readLine()
         }
         return ""
     }
     
-    func login(user: String, password: String) -> Int{
+    func login(user: String, password: String) -> String {
         guard let user = UserDatabase.shared.IsPresent(login: user) else {
-                print("Usuario ou senha inválido")
-                return 0
+                print("\nUsuario ou senha inválido\n")
+                readLine()
+                return ""
             }
         if user.password == password {
-            return user.identifier
+            return user.login
         } else {
-            print("Usuario ou senha invalido")
-            return 0
+            print("\nUsuario ou senha invalido\n")
+            readLine()
+            return ""
         }
     }
 }

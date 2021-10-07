@@ -29,29 +29,54 @@ class UserView {
                 repeate = false
             }
         }
-        
         print("Digite o seu sobrenome: ")
         if let str = readLine() {
             lastName = str
         }
-        print("Digite sua data de nascimento: ")
-        if let str = readLine() {
-            btDate = str
+        
+        repeate = true
+        while repeate {
+            print("Digite sua data de nascimento: ")
+            if let str = readLine() {
+                btDate = str
+            }
+            if btDate.count < 6 {
+                print("----- O formato da data de nascimento é inválido -----\n")
+            } else {
+                repeate = false
+            }
         }
-        print("Digite o seu CPF: ")
-        if let str = readLine() {
-            document = str
+        repeate = true
+        while repeate {
+            print("Digite o seu CPF: ")
+            if let str = readLine() {
+                document = str
+            }
+            if !document.isCPF {
+                print("----- Informe um CPF correto -----\n")
+            } else {
+                repeate = false
+            }
         }
-        print("Digite a sua senha: ")
-        if let str = readLine() {
-            password = str
+        repeate = true
+        while repeate {
+            print("Digite a sua senha: ")
+            if let str = readLine() {
+                password = str
+            }
+            if password.count < 4 {
+                print("----- A senha precisa ter no mínimo 4 caracteres -----\n")
+            } else {
+                repeate = false
+            }
         }
+        
         
         let user = userController.createUser(name: name, lastName: lastName, btDate: btDate, document: document, login: document, password: password)
         return user
     }
     
-    func login() -> Int {
+    func login() -> String {
         var user = ""
         var password = ""
         print("Digite o seu usuario: ")
