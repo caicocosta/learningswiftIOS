@@ -98,10 +98,14 @@ class AccountsController {
     func addPixeKey(userLoggedIn: Int, typeKey: typeKeys, key: String) {
         
         let pixKey = PixKeys(type: typeKey, userId: userLoggedIn, key: key)
-        if let index = accounts.firstIndex(where: {$0.userId == userLoggedIn}) {
-            accounts[index].keys.append(pixKey)
+        guard let index = AccountDatabase.shared.isPresentIndex(userdId: userLoggedIn) else {return}
+        let result = AccountDatabase.shared.addPixKeys(index: index, pixKey: pixKey)
+        if !result.status {
+            print("Houve um erro ao cadastrar a chave: \(result.msg)")
+        } else {
+            print("Chave cadastrada com sucesso")
         }
-        
+        readLine()
     }
     
     func payWithPix(userLoggedIn: Int, typeKey: typeKeys, key: String, value: Double){
@@ -118,6 +122,14 @@ class AccountsController {
             }
         }
         
+    }
+    
+    func keysRegistered(userLoggedIn: Int) {
+        guard let keys = AccountDatabase.shared.registeredKeys(userLoggedIn: userLoggedIn) else {return}
+        for key in keys {
+            print("Tipo: \(key.type),   Chave: \(key.key)")
+        }
+        readLine()
     }
 
 }

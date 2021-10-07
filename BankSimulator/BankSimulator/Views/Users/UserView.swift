@@ -11,17 +11,25 @@ class UserView {
     
     private var userController = Usercontroller()
     
-    func createUser() -> Int {
+    func createUser() -> String {
+        var repeate = true
         var name = ""
         var lastName = ""
         var btDate = ""
         var document = ""
         var password = ""
         
-        print("Digite o seu primeiro nome: ")
-        if let str = readLine() {
+        while repeate {
+            print("Digite o seu primeiro nome: ")
+            guard let str = readLine() else {return ""}
             name = str
+            if name.count < 5 {
+                print("----- O primeiro nome precisa ter no mínimo 5 caracteres! -----\n")
+            } else {
+                repeate = false
+            }
         }
+        
         print("Digite o seu sobrenome: ")
         if let str = readLine() {
             lastName = str

@@ -12,7 +12,7 @@ var users = [Users]()
 var viewAccount = AccountView()
 var viewUser = UserView()
 private var userLoggedIn = 0
-var userNameLogged = ""
+private var user = ""
 var numberAccountLogged = 0
 populabanco()
 firstMenu()
@@ -20,9 +20,16 @@ firstMenu()
 func menu(){
     var option = 0
     var repeate =  true
+    guard let userLogged = UserDatabase.shared.IsPresent(login: String(user)) else {
+        
+        print("Houve ume erro fatal ao tentar abrir o menu, por favor repetir o processo de cadastro.")
+        return
+        
+    }
+    userLoggedIn = userLogged.identifier
     
     while repeate {
-        print("######   Seja bem-vindo \(userNameLogged) ao seu ambiente de contas   ###### \n")
+        print("######   Seja bem-vindo \(userLogged.name) ao seu ambiente de contas   ###### \n")
         print("1 - Cadastrar chaves pix: ")
         print("2 - Depositar em conta: ")
         print("3 - Sacar da conta: ")
@@ -57,13 +64,11 @@ func menu(){
                 }
                 readLine()
             case 7:
-                if let account = accounts.firstIndex(where: {$0.userId == userLoggedIn}) {
-                    accounts[account].registeredKeys()
-                }
+                viewAccount.keysRegistered(userLoggedIn: userLoggedIn)
             case 8:
                 viewAccount.deleteAccount()
             case 0:
-                firstMenu()
+                repeate = false
             default:
                 print("Voce precisa digitar um numero correspodente as acoes")
         }
@@ -75,7 +80,7 @@ func firstMenu() {
     var repeate =  true
     
     while repeate {
-        print("######Seja bem-vindo ao Bank Simulator###### ")
+        print("###### Seja bem-vindo ao Bank Simulator ###### ")
         print("1 - Cadastrar uma nova conta ")
         print("2 - Fazer login ")
         print("0 - Sair do aplicativo")
@@ -85,8 +90,8 @@ func firstMenu() {
         
         switch option {
             case 1:
-                userLoggedIn = viewUser.createUser()
-                if userLoggedIn > 0 {
+                user = viewUser.createUser()
+                if user != "" {
                     menu()
                 }
             case 2:
@@ -101,17 +106,6 @@ func firstMenu() {
             default:
                 print("Voce precisa digitar um numero correspodente as acoes")
         }
-    }
-    
-}
-
-func updateUserLoggedIn(){
-    if let index = accounts.firstIndex(where: {$0.userId == userLoggedIn}) {
-        numberAccountLogged = accounts[index].number
-    }
-    
-    if let index = users.firstIndex(where: {$0.identifier == userLoggedIn}) {
-        userNameLogged = users[index].name
     }
     
 }

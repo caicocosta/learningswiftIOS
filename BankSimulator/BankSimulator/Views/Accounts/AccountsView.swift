@@ -153,4 +153,9 @@ class AccountView {
         accountController.payWithPix(userLoggedIn: userLoggedIn, typeKey: typeKey, key: key, value: value)
         
     }
+    
+    func keysRegistered(userLoggedIn: Int) {
+        print("### Chaves Cadastradas ###")
+        accountController.keysRegistered(userLoggedIn: userLoggedIn)
+    }
 }
