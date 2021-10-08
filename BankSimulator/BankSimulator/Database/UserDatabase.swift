@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import Moya
 
 class UserDatabase {
     
     private var users: [Users] = []
     private var error = ""
+    private let userProvider = MoyaProvider<UserServices>()
     
     static var shared: UserDatabase = {
         let instance = UserDatabase()
@@ -41,6 +43,27 @@ class UserDatabase {
     
     
     //Funcoes para realizar alteracao no banco
+    func loadUsers(){
+        
+        let url = URL(string: "https://6160395dfaa03600179fb95d.mockapi.io/api/users/users")!
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            print(data)
+        }
+        task.resume()
+        
+        /*userProvider.request(.readUser) { result in
+            switch result {
+            case let .success(moyaResponse):
+                let json = try! JSONSerialization.jsonObject(with: moyaResponse.data, options: [])
+                print("IMPRIMININDO DADOS")
+                print(json)
+            case let .failure(errorAPI):
+                print("----IMPRIMINDO ERROR")
+                print(errorAPI)
+            }
+        }*/
+    }
+    
     func addUser(user: Users) -> Response {
         //Aqui estou criando as validacoes simulando o funcionamento de um banco, nao permitindo chaves primarias duplicadas, e nem permitindo nulo.
         

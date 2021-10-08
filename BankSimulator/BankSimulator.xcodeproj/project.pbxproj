@@ -19,7 +19,9 @@
 		7D8DB508270F5907004BDB75 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8DB507270F5907004BDB75 /* Menu.swift */; };
 		7DD476B7270CC76B0006FFA2 /* UserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD476B6270CC76B0006FFA2 /* UserDatabase.swift */; };
 		7DD476B9270CC8FF0006FFA2 /* AccountDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD476B8270CC8FF0006FFA2 /* AccountDatabase.swift */; };
+		7DDDCB2227106F1B00F96342 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDCB2127106F1B00F96342 /* UserService.swift */; };
 		7DF3CA732704F12200A557F8 /* UsersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF3CA722704F12200A557F8 /* UsersModel.swift */; };
+		EE0984E172FD6429B2DF4D27 /* libPods-BankSimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15882B7629471D7A4BBD4EB0 /* libPods-BankSimulator.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +37,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		15882B7629471D7A4BBD4EB0 /* libPods-BankSimulator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BankSimulator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		503D8B463A2277E2924CD10C /* Pods-BankSimulator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BankSimulator.release.xcconfig"; path = "Target Support Files/Pods-BankSimulator/Pods-BankSimulator.release.xcconfig"; sourceTree = "<group>"; };
 		7D0D61452702114800D01556 /* BankSimulator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BankSimulator; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D0D61482702114800D01556 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		7D0D615127022BFD00D01556 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
@@ -48,7 +52,9 @@
 		7D8DB507270F5907004BDB75 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		7DD476B6270CC76B0006FFA2 /* UserDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDatabase.swift; sourceTree = "<group>"; };
 		7DD476B8270CC8FF0006FFA2 /* AccountDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDatabase.swift; sourceTree = "<group>"; };
+		7DDDCB2127106F1B00F96342 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		7DF3CA722704F12200A557F8 /* UsersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersModel.swift; sourceTree = "<group>"; };
+		9F8155D064CCF968BFB8D9D4 /* Pods-BankSimulator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BankSimulator.debug.xcconfig"; path = "Target Support Files/Pods-BankSimulator/Pods-BankSimulator.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE0984E172FD6429B2DF4D27 /* libPods-BankSimulator.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +74,8 @@
 			children = (
 				7D0D61472702114800D01556 /* BankSimulator */,
 				7D0D61462702114800D01556 /* Products */,
+				D75F2924A0D09D67D8366273 /* Pods */,
+				9D6773753C67C8FA538E6BD0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +90,7 @@
 		7D0D61472702114800D01556 /* BankSimulator */ = {
 			isa = PBXGroup;
 			children = (
+				7DDDCB2027106F0800F96342 /* Services */,
 				7D8DB500270E126A004BDB75 /* validators */,
 				7DD476B5270CC75A0006FFA2 /* Database */,
 				7D0D615827025D5000D01556 /* Controllers */,
@@ -154,6 +164,31 @@
 			path = Database;
 			sourceTree = "<group>";
 		};
+		7DDDCB2027106F0800F96342 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7DDDCB2127106F1B00F96342 /* UserService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9D6773753C67C8FA538E6BD0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				15882B7629471D7A4BBD4EB0 /* libPods-BankSimulator.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D75F2924A0D09D67D8366273 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9F8155D064CCF968BFB8D9D4 /* Pods-BankSimulator.debug.xcconfig */,
+				503D8B463A2277E2924CD10C /* Pods-BankSimulator.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -161,6 +196,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D0D614C2702114800D01556 /* Build configuration list for PBXNativeTarget "BankSimulator" */;
 			buildPhases = (
+				C1A00759BEC4CF28BDCF91F5 /* [CP] Check Pods Manifest.lock */,
 				7D0D61412702114800D01556 /* Sources */,
 				7D0D61422702114800D01556 /* Frameworks */,
 				7D0D61432702114800D01556 /* CopyFiles */,
@@ -206,11 +242,37 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C1A00759BEC4CF28BDCF91F5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BankSimulator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7D0D61412702114800D01556 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DDDCB2227106F1B00F96342 /* UserService.swift in Sources */,
 				7DD476B9270CC8FF0006FFA2 /* AccountDatabase.swift in Sources */,
 				7D0D61492702114800D01556 /* main.swift in Sources */,
 				7D8DB4FF270E0C75004BDB75 /* DatabaseErros.swift in Sources */,
@@ -347,7 +409,9 @@
 		};
 		7D0D614D2702114800D01556 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F8155D064CCF968BFB8D9D4 /* Pods-BankSimulator.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DPVS3VJWND;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -358,7 +422,9 @@
 		};
 		7D0D614E2702114800D01556 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 503D8B463A2277E2924CD10C /* Pods-BankSimulator.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DPVS3VJWND;
 				ENABLE_HARDENED_RUNTIME = YES;
