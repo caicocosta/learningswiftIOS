@@ -1,0 +1,6 @@
+module Pods_BankSimulator {
+  umbrella header "Pods-BankSimulator-umbrella.h"
+
+  export *
+  module * { export * }
+}

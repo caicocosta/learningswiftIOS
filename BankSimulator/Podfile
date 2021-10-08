@@ -1,0 +1,6 @@
+target 'BankSimulator' do
+  # Comment the next line if you don't want to use dynamic frameworks
+
+  pod 'Moya', '~> 15.0'
+
+end

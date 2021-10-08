@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "DBE209B6-55FC-400D-BBFA-1A5322B92C71"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E24C727C-460E-409D-9BC0-84B255A7ADA5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BankSimulator/Database/UserDatabase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "loadUsers()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E24C727C-460E-409D-9BC0-84B255A7ADA5 - 16e2a01e0d0a95"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BankSimulator.UserDatabase.loadUsers() -&gt; ()"
+                  moduleName = "BankSimulator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/caico.costa/Desktop/LearningSwift/learningswiftIOS/BankSimulator/BankSimulator/Database/UserDatabase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "E24C727C-460E-409D-9BC0-84B255A7ADA5 - 85e00023df080342"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Moya.Response, Moya.MoyaError&gt;) -&gt; () in BankSimulator.UserDatabase.loadUsers() -&gt; ()"
+                  moduleName = "BankSimulator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/caico.costa/Desktop/LearningSwift/learningswiftIOS/BankSimulator/BankSimulator/Database/UserDatabase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "141">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3633F063-2706-4FBC-B04F-84A52BE3A336"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BankSimulator/Database/UserDatabase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "loadUsers()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
