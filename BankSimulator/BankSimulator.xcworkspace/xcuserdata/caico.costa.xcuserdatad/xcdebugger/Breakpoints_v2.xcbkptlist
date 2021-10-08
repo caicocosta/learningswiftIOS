@@ -14,8 +14,8 @@
             filePath = "BankSimulator/Database/UserDatabase.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "loadUsers()"
             landmarkType = "7">
             <Locations>
@@ -55,16 +55,96 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3633F063-2706-4FBC-B04F-84A52BE3A336"
-            shouldBeEnabled = "Yes"
+            uuid = "613C1A86-A959-4A4C-8780-8E0FAE3895B5"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BankSimulator/Database/UserDatabase.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "getRequest(url:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ABAF2161-EA2D-4E1B-B7EA-261EE5C5C2BD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BankSimulator/Database/UserDatabase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "getRequest(url:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CDCA41D1-9989-4C74-810A-743B60DCEC60"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BankSimulator/Database/UserDatabase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
             landmarkName = "loadUsers()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "179EBAED-1E58-4D43-BD9A-80E1497A5E0C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BankSimulator/Database/UserDatabase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "save()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2D0B563E-0D4A-498D-A0D5-4965FE168480"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BankSimulator/Database/UserDatabase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "save()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5A2E7171-D2D5-4BC5-9DE1-1494C0AB2E09"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BankSimulator/Database/UserDatabase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "save()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
