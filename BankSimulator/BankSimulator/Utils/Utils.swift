@@ -16,4 +16,13 @@ struct Utils {
         }
         return usersDTOs
     }
+    
+    func parseJsonToAccountDTO(json: Data) -> [AccountDTO] {
+        var accountsDTOs = [AccountDTO]()
+        let decoder = JSONDecoder()
+        if let jsonAccounts = try? decoder.decode(AccountsDTO.self, from: json) {
+            accountsDTOs = jsonAccounts.accounts
+        }
+        return accountsDTOs
+    }
 }

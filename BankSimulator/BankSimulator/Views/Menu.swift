@@ -99,19 +99,4 @@ class Menu {
         }
         
     }
-
-    func populabanco(){
-        let user = Users(identifier: 1, name: "CAICO", lastName: "COSTA", btDate: "01/01/2000", document: "123", login: "123", password: "123")
-        let user2 = Users(identifier: 2, name: "GABI", lastName: "COSTA", btDate: "01/01/2000", document: "321", login: "321", password: "321")
-        
-        let account = Account(userId: 1)
-        let account2 = Account(userId: 2)
-        
-        UserDatabase.shared.addUser(user: user)
-        UserDatabase.shared.addUser(user: user2)
-        
-        AccountDatabase.shared.addAccount(account: account)
-        AccountDatabase.shared.addAccount(account: account2)
-    }
-
 }

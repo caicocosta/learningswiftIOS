@@ -11,6 +11,7 @@ class AccountDatabase{
     
     private var accounts: [Account] = []
     private var error = ""
+    private var accountService = AccountService()
     
     static var shared: AccountDatabase = {
         let instance = AccountDatabase()
@@ -41,9 +42,20 @@ class AccountDatabase{
         return index
     }
     
-   
+
+    //Funcoes para importar contas cadastradas
+    func loadAccounts(){
+       accountService.loadAccounts()
+    }
+    
+    func importAccounts(account: Account){
+        accounts.append(account)
+    }
+    
     //Funcoes para realizar alteracoes no banco
     func addAccount(account: Account) {
+        //TODO criar verificacao se a requisicao foi um sucesso.
+        accountService.save(account: account)
         accounts.append(account)
     }
     
