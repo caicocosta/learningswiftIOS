@@ -171,7 +171,8 @@ class AccountView {
     func balance(userLoggedIn: Int){
         guard let balance = accountController.balance(userLoggedIn: userLoggedIn) else {return}
         print("\n\n**** Saldo da conta \(balance.userName) ****\n\n")
-        print("Conta: \(balance.account),   Saldo: \(balance.balance)\n\n")
+        //O ID nao deve ser exibido, coloquei aqui so para validar uns processos do APP
+        print("id: \(balance.id),   Conta: \(balance.account),   Saldo: \(balance.balance)\n\n")
         readLine()
     }
 }

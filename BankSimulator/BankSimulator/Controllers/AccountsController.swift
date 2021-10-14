@@ -112,9 +112,9 @@ class AccountsController {
         readLine()
     }
     
-    func balance(userLoggedIn: Int) -> (userName: String, account: Int, balance: Double)? {
+    func balance(userLoggedIn: Int) -> (userName: String, id: Int, account: Int, balance: Double)? {
         guard let result = AccountDatabase.shared.balanceReport(userLoggedIn: userLoggedIn) else {return nil}
-        return (result.userName, result.account, result.balance)
+        return (result.userName, result.id ,result.account, result.balance)
     }
 
 }

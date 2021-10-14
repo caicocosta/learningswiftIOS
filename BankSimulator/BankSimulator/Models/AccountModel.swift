@@ -8,11 +8,19 @@
 import Foundation
 
 class Account{
+    var id: Int = 0
     var userId: Int
     var number: Int
     var securityCod: Int
     var keys: [PixKeys] = []
-    private var balance = 1000.0
+    private var balance = 0.0
+    
+    init(id: Int, userId: Int, number: Int, securityCod: Int) {
+        self.id = id
+        self.userId = userId
+        self.number =  number
+        self.securityCod = securityCod
+    }
     
     init(userId: Int) {
         self.userId = userId
@@ -34,7 +42,8 @@ class Account{
     }
     
     func financialReport(){
-        print("Conta: \(number), Saldo: \(balance)")
+        //O id interno nunca seria mostrado em um relatorio simples, coloquei so para validacao do funcionamento.
+        print("id: \(id), Conta: \(number), Saldo: \(balance)")
     }
     
     func registeredKeys(){

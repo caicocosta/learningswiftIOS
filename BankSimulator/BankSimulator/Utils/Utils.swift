@@ -25,4 +25,17 @@ struct Utils {
         }
         return accountsDTOs
     }
+    
+    func parseDictionaryToData(dic: [String: Any]) -> Data {
+        var data: Data?
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: dic, options: .prettyPrinted)
+            // here "jsonData" is the dictionary encoded in JSON data
+
+            data = jsonData
+        } catch {
+            print(error.localizedDescription)
+        }
+        return data!
+    }
 }

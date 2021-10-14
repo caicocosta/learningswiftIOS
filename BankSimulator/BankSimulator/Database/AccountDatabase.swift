@@ -71,6 +71,9 @@ class AccountDatabase{
     func deposit(numberAccount: Int, value: Double) -> Bool {
         guard let index = isPresentNumberAccount(numberAccount: numberAccount) else {return false}
         accounts[index].deposit(value: value)
+        
+        //Atualizando na API
+        accountService.update(account: accounts[index])
         return true
     }
     
@@ -80,6 +83,8 @@ class AccountDatabase{
             
         }
         if accounts[index].withDraw(value: value) {
+            //Atualizando na API
+            accountService.update(account: accounts[index])
             return Response(status: true, cod: .NO_ERROR, message: "SUCCESS")
         }
         return Response(status: false, cod: .GENERIC_ERROR, message: "Saldo Insuficiente")
@@ -100,6 +105,10 @@ class AccountDatabase{
             return Response(status: false, cod: .GENERIC_ERROR, message: "Saldo Insuficiente")
         }
         accounts[indexDestineAccount].deposit(value: value)
+
+        //Atualizando na API
+        accountService.update(account: accounts[indexOriginAccount])
+        accountService.update(account: accounts[indexDestineAccount])
         return Response(status: true, cod: .NO_ERROR, message: "SUCCESS")
     }
     
@@ -118,6 +127,11 @@ class AccountDatabase{
             return Response(status: false, cod: .GENERIC_ERROR, message: "Saldo Insuficiente")
         }
         accounts[indexDestineAccount].deposit(value: value)
+        
+        //Atualizando na API
+        accountService.update(account: accounts[indexOriginAccount])
+        accountService.update(account: accounts[indexDestineAccount])
+        
         return Response(status: true, cod: .NO_ERROR, message: "SUCCESS")
     }
     
@@ -138,10 +152,10 @@ class AccountDatabase{
         return nil
     }
     
-    func balanceReport(userLoggedIn: Int) -> (userName: String, account: Int, balance: Double)?{
+    func balanceReport(userLoggedIn: Int) -> (userName: String, id: Int, account: Int, balance: Double)?{
         guard let index = isPresentIndex(userdId: userLoggedIn) else {return nil}
         guard let user = UserDatabase.shared.IsPresentIdentifier(userId: userLoggedIn) else {return nil}
         let balance = accounts[index].getBalance()
-        return (user.name, accounts[index].number, balance)
+        return (user.name, accounts[index].id, accounts[index].number, balance)
     }
 }

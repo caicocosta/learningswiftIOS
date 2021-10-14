@@ -27,6 +27,7 @@
 		7D8DB4FF270E0C75004BDB75 /* DatabaseErros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8DB4FE270E0C75004BDB75 /* DatabaseErros.swift */; };
 		7D8DB502270E127B004BDB75 /* StringValidators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8DB501270E127B004BDB75 /* StringValidators.swift */; };
 		7D8DB508270F5907004BDB75 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8DB507270F5907004BDB75 /* Menu.swift */; };
+		7DB0181327186430008EAB28 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0181227186430008EAB28 /* API.swift */; };
 		7DD476B7270CC76B0006FFA2 /* UserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD476B6270CC76B0006FFA2 /* UserDatabase.swift */; };
 		7DD476B9270CC8FF0006FFA2 /* AccountDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD476B8270CC8FF0006FFA2 /* AccountDatabase.swift */; };
 		7DDDCB2227106F1B00F96342 /* UserServiceWithMoya.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDDCB2127106F1B00F96342 /* UserServiceWithMoya.swift */; };
@@ -70,6 +71,7 @@
 		7D8DB4FE270E0C75004BDB75 /* DatabaseErros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseErros.swift; sourceTree = "<group>"; };
 		7D8DB501270E127B004BDB75 /* StringValidators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringValidators.swift; sourceTree = "<group>"; };
 		7D8DB507270F5907004BDB75 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		7DB0181227186430008EAB28 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		7DD476B6270CC76B0006FFA2 /* UserDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDatabase.swift; sourceTree = "<group>"; };
 		7DD476B8270CC8FF0006FFA2 /* AccountDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDatabase.swift; sourceTree = "<group>"; };
 		7DDDCB2127106F1B00F96342 /* UserServiceWithMoya.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceWithMoya.swift; sourceTree = "<group>"; };
@@ -248,6 +250,14 @@
 			path = validators;
 			sourceTree = "<group>";
 		};
+		7DB018112718641A008EAB28 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7DB0181227186430008EAB28 /* API.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		7DD476B5270CC75A0006FFA2 /* Database */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,6 +270,7 @@
 		7DDDCB2027106F0800F96342 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				7DB018112718641A008EAB28 /* Network */,
 				7D87B9322713292A00FE6BE3 /* AccountsEndPoints */,
 				7D87B9312713290E00FE6BE3 /* UsersEndPoints */,
 			);
@@ -385,6 +396,7 @@
 				7D572858270631FB003B2227 /* PixModel.swift in Sources */,
 				7D87B92727131D7400FE6BE3 /* UserService.swift in Sources */,
 				7D0D615227022BFD00D01556 /* AccountModel.swift in Sources */,
+				7DB0181327186430008EAB28 /* API.swift in Sources */,
 				7D8DB508270F5907004BDB75 /* Menu.swift in Sources */,
 				7DF3CA732704F12200A557F8 /* UsersModel.swift in Sources */,
 				7D0D61552702302800D01556 /* AccountsView.swift in Sources */,
