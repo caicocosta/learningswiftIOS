@@ -8,7 +8,7 @@
 import Foundation
 
 struct PixKeyDTO: Codable {
-    var type: String
+    var typekey: String
     var userid: Int
     var key: String
 }

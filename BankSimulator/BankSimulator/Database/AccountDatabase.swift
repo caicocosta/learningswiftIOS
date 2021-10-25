@@ -65,6 +65,7 @@ class AccountDatabase{
             return Response(status: false, cod: .ALREADY_REGISTERED, message: error)
         }
         accounts[index].keys.append(pixKey)
+        accountService.update(account: accounts[index])
         return Response(status: true, cod: .NO_ERROR, message: "SUCCESS")
     }
     

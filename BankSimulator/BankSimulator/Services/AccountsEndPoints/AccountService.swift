@@ -19,7 +19,7 @@ struct AccountService {
         let json: [String: Any] = ["userid": account.userId,
                                    "number": account.number,
                                    "securityCod": account.securityCod,
-                                //   "keys": account.keys,
+                                   //"keys": account.keys,
                                    "balance": account.getBalance()]
 
         api.post(json: json, resource: resource)
@@ -30,13 +30,8 @@ struct AccountService {
         api.get(resource: resource){
             (result, erro)  in
               if(result != nil) {
-                //dtoToAccount(accountDTO: accountDTO)
                 let accountDTO = self.utils.parseJsonToAccountDTO(json: result!)
-                for dto in accountDTO {
-                    let newAccount = Account(id: Int(dto.id) ?? 0, userId: dto.userid, number: dto.number, securityCod: dto.securityCod)
-                    newAccount.deposit(value: dto.balance)
-                    AccountDatabase.shared.importAccounts(account: newAccount)
-                }
+                dtoToAccount(accountDTO: accountDTO)
               } else {
                   print("A requisicao nao funcionou")
               }
@@ -45,34 +40,40 @@ struct AccountService {
     }
     
     func update(account: Account) {
+//        var keys: [PixKeyDTO] = []
+//        for key in account.keys {
+//            let keyDTO = PixKeyDTO(type: key.type, userid: key.userId, key: key.key)
+//            keys.append(keyDTO)
+//        }
         let json: [String: Any] = ["userid": account.userId,
                                    "number": account.number,
                                    "securityCod": account.securityCod,
-                                //   "keys": account.keys,
+                                   //"keys": account.keys,
                                    "balance": account.getBalance()]
 
         api.put(json: json, resource: resource + "/\(account.id)")
     }
     
-//    func dtoToAccount(accountDTO: [AccountDTO]){
-//        var typeKey: typeKeys = .UNKNOWN
-//        for dto in accountDTO {
-//            let newAccount = Account(userId: dto.userid)
-//            for dtoKey in dto.keys {
-//                switch dtoKey.type {
-//                    case "EMAIL":
-//                        typeKey = .EMAIL
-//                    case "CELPHONE":
-//                        typeKey = .CELPHONE
-//                    case "DOCUMENT":
-//                        typeKey = .DOCUMENT
-//                    default:
-//                        typeKey = .UNKNOWN
-//                }
-//                let key = PixKeys(type: typeKey, userId: dtoKey.userid, key: dtoKey.key)
-//                newAccount.keys.append(key)
-//            }
-//            AccountDatabase.shared.importAccounts(account: newAccount)
-//        }
-//    }
+    func dtoToAccount(accountDTO: [AccountDTO]){
+        var typeKey: typeKeys = .UNKNOWN
+        for dto in accountDTO {
+            let newAccount = Account(id: Int(dto.id) ?? 0, userId: dto.userid, number: dto.number, securityCod: dto.securityCod)
+            newAccount.deposit(value: dto.balance)
+            for dtoKey in dto.keys {
+                switch dtoKey.typekey {
+                    case "EMAIL":
+                        typeKey = .EMAIL
+                    case "CELPHONE":
+                        typeKey = .CELPHONE
+                    case "DOCUMENT":
+                        typeKey = .DOCUMENT
+                    default:
+                        typeKey = .UNKNOWN
+                }
+                let key = PixKeys(type: typeKey, userId: dtoKey.userid, key: dtoKey.key)
+                newAccount.keys.append(key)
+            }
+            AccountDatabase.shared.importAccounts(account: newAccount)
+        }
+    }
 }

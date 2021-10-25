@@ -23,7 +23,6 @@
 		7D87B92E2713280D00FE6BE3 /* PixKeyDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D87B92D2713280D00FE6BE3 /* PixKeyDTO.swift */; };
 		7D87B9302713286700FE6BE3 /* AccountsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D87B92F2713286700FE6BE3 /* AccountsDTO.swift */; };
 		7D87B9342713295F00FE6BE3 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D87B9332713295F00FE6BE3 /* AccountService.swift */; };
-		7D87B9362713346200FE6BE3 /* PixKeysDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D87B9352713346200FE6BE3 /* PixKeysDTO.swift */; };
 		7D8DB4FF270E0C75004BDB75 /* DatabaseErros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8DB4FE270E0C75004BDB75 /* DatabaseErros.swift */; };
 		7D8DB502270E127B004BDB75 /* StringValidators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8DB501270E127B004BDB75 /* StringValidators.swift */; };
 		7D8DB508270F5907004BDB75 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8DB507270F5907004BDB75 /* Menu.swift */; };
@@ -67,7 +66,6 @@
 		7D87B92D2713280D00FE6BE3 /* PixKeyDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixKeyDTO.swift; sourceTree = "<group>"; };
 		7D87B92F2713286700FE6BE3 /* AccountsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsDTO.swift; sourceTree = "<group>"; };
 		7D87B9332713295F00FE6BE3 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
-		7D87B9352713346200FE6BE3 /* PixKeysDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixKeysDTO.swift; sourceTree = "<group>"; };
 		7D8DB4FE270E0C75004BDB75 /* DatabaseErros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseErros.swift; sourceTree = "<group>"; };
 		7D8DB501270E127B004BDB75 /* StringValidators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringValidators.swift; sourceTree = "<group>"; };
 		7D8DB507270F5907004BDB75 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
@@ -219,7 +217,6 @@
 			isa = PBXGroup;
 			children = (
 				7D87B92D2713280D00FE6BE3 /* PixKeyDTO.swift */,
-				7D87B9352713346200FE6BE3 /* PixKeysDTO.swift */,
 			);
 			path = pixKeysDTO;
 			sourceTree = "<group>";
@@ -392,7 +389,6 @@
 				7D572856270601ED003B2227 /* UsersController.swift in Sources */,
 				7D830F0F2710F5320042516A /* Utils.swift in Sources */,
 				7D830F0C2710ECEF0042516A /* usersDTO.swift in Sources */,
-				7D87B9362713346200FE6BE3 /* PixKeysDTO.swift in Sources */,
 				7D572858270631FB003B2227 /* PixModel.swift in Sources */,
 				7D87B92727131D7400FE6BE3 /* UserService.swift in Sources */,
 				7D0D615227022BFD00D01556 /* AccountModel.swift in Sources */,

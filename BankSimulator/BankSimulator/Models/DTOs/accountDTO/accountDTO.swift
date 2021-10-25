@@ -13,5 +13,5 @@ struct AccountDTO: Codable {
     var number: Int
     var securityCod: Int
     var balance: Double
-    //var keys: [PixKeyDTO]
+    var keys: [PixKeyDTO]
 }
