@@ -15,6 +15,8 @@
 		7D54EA632721ADFF0086A812 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D54EA612721ADFF0086A812 /* Main.storyboard */; };
 		7D54EA652721AE000086A812 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D54EA642721AE000086A812 /* Assets.xcassets */; };
 		7D54EA682721AE000086A812 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D54EA662721AE000086A812 /* LaunchScreen.storyboard */; };
+		7DA61B5E272C2AA7007A2767 /* TaxesCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA61B5D272C2AA7007A2767 /* TaxesCalculator.swift */; };
+		7DA61B60272C2C72007A2767 /* UIViewController+TaxesCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA61B5F272C2C72007A2767 /* UIViewController+TaxesCalculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		7D54EA642721AE000086A812 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D54EA672721AE000086A812 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D54EA692721AE000086A812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DA61B5D272C2AA7007A2767 /* TaxesCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxesCalculator.swift; sourceTree = "<group>"; };
+		7DA61B5F272C2C72007A2767 /* UIViewController+TaxesCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+TaxesCalculator.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				7D54EA692721AE000086A812 /* Info.plist */,
 				7D3AE3182729D80F0091799D /* SettingsViewController.swift */,
 				7D3AE31A2729D8290091799D /* TaxesViewController.swift */,
+				7DA61B5D272C2AA7007A2767 /* TaxesCalculator.swift */,
+				7DA61B5F272C2C72007A2767 /* UIViewController+TaxesCalculator.swift */,
 			);
 			path = ComprasUSA;
 			sourceTree = "<group>";
@@ -146,6 +152,8 @@
 				7D54EA602721ADFF0086A812 /* ShoppingViewController.swift in Sources */,
 				7D54EA5C2721ADFF0086A812 /* AppDelegate.swift in Sources */,
 				7D3AE31B2729D8290091799D /* TaxesViewController.swift in Sources */,
+				7DA61B5E272C2AA7007A2767 /* TaxesCalculator.swift in Sources */,
+				7DA61B60272C2C72007A2767 /* UIViewController+TaxesCalculator.swift in Sources */,
 				7D54EA5E2721ADFF0086A812 /* SceneDelegate.swift in Sources */,
 				7D3AE3192729D80F0091799D /* SettingsViewController.swift in Sources */,
 			);

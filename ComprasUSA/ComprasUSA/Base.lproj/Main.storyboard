@@ -36,7 +36,7 @@
                                 <rect key="frame" x="132" y="98.666666666666671" width="242" height="48.000000000000014"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="32"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 0,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SwE-LJ-HTf">
                                 <rect key="frame" x="40" y="420" width="352" height="39"/>
@@ -71,21 +71,41 @@
                             <constraint firstItem="KEB-S9-Qj5" firstAttribute="width" secondItem="Qoh-vv-ekN" secondAttribute="width" id="bCM-0R-e3L"/>
                             <constraint firstItem="Qoh-vv-ekN" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:3" id="dkU-zE-5Hh"/>
                             <constraint firstItem="15n-Eb-cI3" firstAttribute="trailing" secondItem="Qoh-vv-ekN" secondAttribute="trailing" constant="-40" id="h7Y-rf-NTx"/>
+                            <constraint firstItem="KEB-S9-Qj5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hjC-ib-idm"/>
                             <constraint firstItem="1X6-9K-B6k" firstAttribute="leading" secondItem="SwE-LJ-HTf" secondAttribute="leading" constant="3" id="hsP-W3-jzH"/>
                             <constraint firstItem="Qoh-vv-ekN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="joH-hD-CZa"/>
                             <constraint firstItem="nyI-Xd-i1c" firstAttribute="centerY" secondItem="15n-Eb-cI3" secondAttribute="centerY" id="mYs-7S-z9f"/>
+                            <constraint firstItem="Qoh-vv-ekN" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:2" id="pfy-Fx-Vci"/>
                             <constraint firstItem="SwE-LJ-HTf" firstAttribute="top" secondItem="1X6-9K-B6k" secondAttribute="bottom" constant="10" id="q8L-IP-yV2"/>
                             <constraint firstItem="nyI-Xd-i1c" firstAttribute="top" secondItem="1Ln-be-Au8" secondAttribute="bottom" constant="10" id="rSp-jr-M64"/>
                             <constraint firstItem="KEB-S9-Qj5" firstAttribute="top" secondItem="Qoh-vv-ekN" secondAttribute="bottom" constant="6" id="vXM-fm-XGf"/>
                             <constraint firstItem="SwE-LJ-HTf" firstAttribute="leading" secondItem="KEB-S9-Qj5" secondAttribute="leading" constant="40" id="wOe-aP-Prv"/>
                             <constraint firstItem="15n-Eb-cI3" firstAttribute="leading" secondItem="nyI-Xd-i1c" secondAttribute="trailing" constant="22" id="yzj-uu-Cjs"/>
                         </constraints>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="83V-3f-ToA"/>
+                                <exclude reference="vXM-fm-XGf"/>
+                                <include reference="Ci4-Lt-y4S"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="pfy-Fx-Vci"/>
+                                <exclude reference="hjC-ib-idm"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Compras" image="bag" selectedImage="bag" id="g0z-2b-UuF"/>
+                    <connections>
+                        <outlet property="lbReal" destination="SwE-LJ-HTf" id="IxW-dT-dHv"/>
+                        <outlet property="lbRealDescription" destination="1X6-9K-B6k" id="MwE-QG-eZ3"/>
+                        <outlet property="tfDolar" destination="15n-Eb-cI3" id="pRX-ZH-WST"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-820.28985507246387" y="857.60869565217399"/>
+            <point key="canvasLocation" x="-820.92391304347836" y="856.52173913043487"/>
         </scene>
         <!--Configuracões-->
         <scene sceneID="57A-La-UmH">
@@ -99,7 +119,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="411" height="317"/>
                                 <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="1bj-hv-XGF">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="1bj-hv-XGF">
                                 <rect key="frame" x="20" y="20" width="374" height="267"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="rdU-Gt-chk">
@@ -111,12 +131,15 @@
                                                 <color key="textColor" systemColor="systemRedColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="3.5" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ToQ-wU-muv">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ToQ-wU-muv">
                                                 <rect key="frame" x="0.0" y="26.333333333333336" width="374" height="48.000000000000007"/>
                                                 <color key="backgroundColor" red="1" green="0.89411764705882346" blue="0.89411764705882346" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="0.67450980392156867" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="32"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="UFe-K3-M5I" id="QVm-au-cm6"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -129,12 +152,15 @@
                                                 <color key="textColor" red="0.0" green="0.50980392156862742" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="6,38" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ei6-VI-lE9">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ei6-VI-lE9">
                                                 <rect key="frame" x="0.0" y="26.333333333333329" width="374" height="48"/>
                                                 <color key="backgroundColor" red="0.77647058823529413" green="0.94901960784313721" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="0.0" green="0.50980392156862742" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="32"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="UFe-K3-M5I" id="cRo-BD-hNh"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -147,16 +173,20 @@
                                                 <color key="textColor" red="0.0" green="0.50980392156862742" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="7,0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iuu-86-LJz">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iuu-86-LJz">
                                                 <rect key="frame" x="0.0" y="26.333333333333343" width="374" height="48"/>
                                                 <color key="backgroundColor" red="0.88235294117647056" green="0.96862745098039216" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="0.0" green="0.023529411764705882" blue="0.83921568627450982" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="32"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="UFe-K3-M5I" id="zdB-2K-LBh"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <variation key="heightClass=compact" axis="horizontal"/>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XXi-jA-iEw"/>
@@ -172,6 +202,11 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Configuracões" image="settings" selectedImage="settings" id="PQT-Rl-0yG"/>
+                    <connections>
+                        <outlet property="tfDolar" destination="ToQ-wU-muv" id="cg6-d8-i4c"/>
+                        <outlet property="tfIOF" destination="Ei6-VI-lE9" id="40u-0y-e1W"/>
+                        <outlet property="tfStateTexas" destination="Iuu-86-LJz" id="mY7-TT-AEw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wtk-Yb-Ig8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -185,9 +220,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="flag" translatesAutoresizingMaskIntoConstraints="NO" id="bGI-An-lVm">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flag" translatesAutoresizingMaskIntoConstraints="NO" id="bGI-An-lVm">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TDn-0A-wCK">
                                 <rect key="frame" x="0.0" y="265.66666666666669" width="414" height="205"/>
@@ -230,6 +264,9 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b7u-KJ-ugy">
                                         <rect key="frame" x="345" y="108" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="changeIOF:" destination="ueJ-9J-2Br" eventType="valueChanged" id="j5b-bo-n6R"/>
+                                        </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compra no cartão?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7y1-DK-joU">
                                         <rect key="frame" x="20" y="113" width="144" height="21"/>
@@ -279,12 +316,25 @@
                         <viewLayoutGuide key="safeArea" id="Lre-A4-nCF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="bGI-An-lVm" firstAttribute="bottom" secondItem="Lre-A4-nCF" secondAttribute="bottom" id="6eN-La-AeE"/>
+                            <constraint firstItem="bGI-An-lVm" firstAttribute="top" secondItem="Lre-A4-nCF" secondAttribute="top" id="EMj-9Y-MS7"/>
                             <constraint firstItem="TDn-0A-wCK" firstAttribute="leading" secondItem="Lre-A4-nCF" secondAttribute="leading" id="FcH-np-liz"/>
+                            <constraint firstItem="bGI-An-lVm" firstAttribute="trailing" secondItem="Lre-A4-nCF" secondAttribute="trailing" id="SNa-id-eIp"/>
+                            <constraint firstItem="bGI-An-lVm" firstAttribute="leading" secondItem="Lre-A4-nCF" secondAttribute="leading" id="UL5-2v-Lgr"/>
                             <constraint firstAttribute="trailing" secondItem="TDn-0A-wCK" secondAttribute="trailing" id="c44-x6-RZq"/>
                             <constraint firstItem="TDn-0A-wCK" firstAttribute="centerY" secondItem="zl9-y6-fD3" secondAttribute="centerY" id="j2Y-rh-xw0"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Impostos" image="taxes" selectedImage="taxes" id="qOd-zn-hqj"/>
+                    <connections>
+                        <outlet property="lbDolar" destination="7Qm-B2-Ego" id="SXh-ug-6Bv"/>
+                        <outlet property="lbIOF" destination="3DQ-KK-9y3" id="vqp-OE-ovt"/>
+                        <outlet property="lbIOFDescription" destination="jGe-Zc-ZCg" id="5a0-qj-AeV"/>
+                        <outlet property="lbReal" destination="0g9-E0-erq" id="HiY-d6-1ek"/>
+                        <outlet property="lbStateTaxDescription" destination="Ocq-gZ-1L6" id="fEO-HF-fRV"/>
+                        <outlet property="lbStateTaxes" destination="IzJ-IL-S51" id="InK-Sf-hR6"/>
+                        <outlet property="swCreditCard" destination="b7u-KJ-ugy" id="aFq-Wi-2C0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O3G-07-f83" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
